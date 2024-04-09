@@ -111,9 +111,9 @@
          
           var secondCanvas = document.getElementById('bCanvas'); //variable to call for the id bCanvas to create the canvas where the imaeg with only the blue pixels will display.
           var secondContext = secondCanvas.getContext ('2d'); //Codes for the second canvas where the blue image will go
-         context.font = '20pt Calibri'; //Font to display the text.
-         context.fillStyle = "black"; //Color of the text to be displayed.
-         context.fillText("Original image with only blue pixels will display here", 10, 20); //Text that will print out on the canvas.
+         secondContext.font = '20pt Calibri'; //Font to display the text.
+         secondContext.fillStyle = "black"; //Color of the text to be displayed.
+         secondContext.fillText("Original image with only blue pixels will display here", 10, 20); //Text that will print out on the canvas.
         
          var imageData = context.getImageData(0,0,600,500); //To display the file/image added.
          var data = imageData.data; //call for the image.
