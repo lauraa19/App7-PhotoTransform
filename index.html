@@ -98,11 +98,14 @@
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
-         var secondCanvas = document.createElement ('Canvas');
+         var secondCanvas = document.createElement ('Canvas'); // Created a new canvas
          secondCanvas.width = img.width;
          secondCanvas.height = img.height:
          var secondCtx = secondCanvas.getContext('2d');
          secondCtx.drawImage(img, 0, 0);
+
+         var imageData = secondCtx.getImageData (0, 0, img.width, img.height); // get the image data
+         var pixels = imageData.data;
 
 
          
