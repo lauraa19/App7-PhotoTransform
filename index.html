@@ -100,15 +100,6 @@
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
          console.log("Drawing image on canvas");
-         
-         var bCanvas = document.createElement ('canvas'); // Codes for the new canvas that will only show the blue pixels.
-         bCanvas.width = img.width;
-         bCanvas.height = img.height:
-         var bContext = bCanvas.getContext('2d');
-         bContext.drawImage(img, 0, 0);
-
-         var imageData = bContext.getImageData (0, 0, img.width, img.height); // get the image data
-         var pixels = imageData.data;
 
 
          for (var i = 0; i < pixels.length; i += 4) {
