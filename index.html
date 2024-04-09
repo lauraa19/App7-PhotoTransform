@@ -113,9 +113,9 @@
           var secondContext = secondCanvas.getContext ('2d'); //Codes for the second canvas where the blue image will go
          secondContext.font = '15pt Calibri';
          secondContext.fillStyle = 'Black';
-         secontContext.fillText('New blue-processed image will appear here!', 10, 20);
+         secondContext.fillText('New blue-processed image will appear here!', 10, 20);
 
-         var imageData = context.getImage(0,0,500,400);
+         var imageData = context.getImageData(0,0,600,500);
          var data = imageData.data;
          
           
