@@ -100,7 +100,7 @@
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
-         console.log("Drawing image on canvas");
+         console.log("Drawing image on canvas"); //outputs the message "Drawing image on canvas" to if the console needs debugging.
 
 
 
@@ -109,21 +109,21 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
          
-          var secondCanvas = document.getElementById('bCanvas');
+          var secondCanvas = document.getElementById('bCanvas'); //variable to call for the id bCanvas to create the canvas where the imaeg with only the blue pixels will display.
           var secondContext = secondCanvas.getContext ('2d'); //Codes for the second canvas where the blue image will go
-         secondContext.font = '15pt Calibri';
-         secondContext.fillStyle = 'Black';
-         secondContext.fillText('New blue-processed image will appear here!', 10, 20);
-
-         var imageData = context.getImageData(0,0,600,500);
-         var data = imageData.data;
+         context.font = '20pt Calibri'; //Font to display the text.
+         context.fillStyle = "black"; //Color of the text to be displayed.
+         context.fillText("Original image with only blue pixels will display here", 10, 20); //Text that will print out on the canvas.
+        
+         var imageData = context.getImageData(0,0,600,500); //To display the file/image added.
+         var data = imageData.data; //call for the image.
          
           
 
           for (var i = 0; i < data.length; i += 4) {
            data[i] =0;
-            data[i + 1] = 0;
-          } secondContext.putImageData(imageData, 0, 0);
+            data[i + 1] = 0; //Cancels out the red and green pixels so that only the blue will display.
+          } secondContext.putImageData(imageData, 0, 0); //The image that it will change the pixels.
           
         } // end of img.onload
         
@@ -154,8 +154,8 @@
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-     <canvas id="bCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> 
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!-- Id for the first canvas -->
+     <canvas id="bCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>  <!-- Id for the second canvas -->
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
