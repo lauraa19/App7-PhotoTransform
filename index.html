@@ -38,11 +38,7 @@
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-
-  <style>
-   canvas {
-    border : 1px solid black;
-  </style>
+  
 
  <script>
   var docMod = document.lastModified; // gets last modified date and time of the index.html file
@@ -108,7 +104,7 @@
          var bCanvas = document.createElement ('canvas'); // Codes for the new canvas that will only show the blue pixels.
          bCanvas.width = img.width;
          bCanvas.height = img.height:
-         var bCtx = bCanvas.getContext('2d');
+         var bContext = bCanvas.getContext('2d');
          bCtx.drawImage(img, 0, 0);
 
          var imageData = bCtx.getImageData (0, 0, img.width, img.height); // get the image data
@@ -127,13 +123,7 @@
          document.body.appendChild(bCanvas);
 
 
-         var secondCanvas = document.createElement('canvas'); //Codes for the second canvas
-         secondCanvas.width = img.width;
-         secondCanvas.height = img.height;
-         var secondCTX = secondCanvas.getContext ('2d'):
-
-         secondCtx.drawImage (bCanvas, 0, 0);
-         document.body.appendChild(secondCanvas);
+      
 
     
 
@@ -142,7 +132,16 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          
+         
+          var secondCanvas = dcument.getElementById('bData');
+          var secondCTX = secondCanvas.getContext ('2d'): //Codes for the second canvas where the blue image will go
+         secondContext.font = '15pt Calibri';
+         secondContext.fillStyle = 'Black';
+         secontContext.fillText('New blue-processed image will appear here!', 10, 20);
+
+         var imageData = context.getImage(0,0,500,400);
+         var data = imageData.data;
+         
           
           
           
@@ -176,6 +175,7 @@
       <div id="messageDisplayArea"></div>
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+     <canvas id="bCanvas" wirdth=600 height=500 style="border:1px solid #d3d3d3;"></canvas> 
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
