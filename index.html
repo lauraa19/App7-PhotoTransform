@@ -105,9 +105,9 @@
          bCanvas.width = img.width;
          bCanvas.height = img.height:
          var bContext = bCanvas.getContext('2d');
-         bCtx.drawImage(img, 0, 0);
+         bContext.drawImage(img, 0, 0);
 
-         var imageData = bCtx.getImageData (0, 0, img.width, img.height); // get the image data
+         var imageData = bContext.getImageData (0, 0, img.width, img.height); // get the image data
          var pixels = imageData.data;
 
 
@@ -119,7 +119,7 @@
           }
          }
 
-         bCtx.putImageData(imageData, 0, 0);
+         bContext.putImageData(imageData, 500, 600);
          document.body.appendChild(bCanvas);
 
 
