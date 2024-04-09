@@ -39,6 +39,11 @@
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 
+  <style>
+   canvas {
+    border : 1px solid black;
+  </style>
+
  <script>
   var docMod = document.lastModified; // gets last modified date and time of the index.html file
   console.log("This file last modified  " + docMod); // displays last modified date and time in the javascipt browser console 
@@ -98,6 +103,8 @@
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
+         console.log("Drawing image on canvas");
+         
          var bCanvas = document.createElement ('canvas'); // Codes for the new canvas that will only show the blue pixels.
          bCanvas.width = img.width;
          bCanvas.height = img.height:
@@ -126,7 +133,7 @@
          var secondCTX = secondCanvas.getContext ('2d'):
 
          secondCtx.drawImage (bCanvas, 0, 0);
-         Document.body.appendChild(secondCanvas);
+         document.body.appendChild(secondCanvas);
 
     
 
